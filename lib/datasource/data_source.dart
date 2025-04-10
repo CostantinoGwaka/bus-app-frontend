@@ -1,12 +1,10 @@
-
-
-import '../models/app_user.dart';
-import '../models/auth_response_model.dart';
-import '../models/bus_model.dart';
-import '../models/bus_reservation.dart';
-import '../models/bus_schedule.dart';
-import '../models/but_route.dart';
-import '../models/response_model.dart';
+import 'package:app/model/app_user.dart';
+import 'package:app/model/auth_response_model.dart';
+import 'package:app/model/bus_model.dart';
+import 'package:app/model/bus_reservation.dart';
+import 'package:app/model/bus_schedule.dart';
+import 'package:app/model/but_route.dart';
+import 'package:app/model/response_model.dart';
 
 abstract class DataSource {
   Future<AuthResponseModel?> login(AppUser user);
