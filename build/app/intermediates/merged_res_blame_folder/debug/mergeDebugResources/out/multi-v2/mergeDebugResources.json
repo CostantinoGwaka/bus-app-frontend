@@ -513,25 +513,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\HP\\Documents\\GitHub\\bus-app-frontend\\app\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,832",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "483,998"
-                    },
-                    "to": {
-                        "startLines": "155,159",
-                        "startColumns": "4,4",
-                        "startOffsets": "7894,8075",
-                        "endLines": "158,161",
-                        "endColumns": "12,12",
-                        "endOffsets": "8070,8239"
-                    }
-                },
-                {
                     "source": "C:\\Users\\HP\\.gradle\\caches\\8.10.2\\transforms\\13dd610fda78ecd8ad3daad9b8195d7e\\transformed\\jetified-activity-1.8.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3",
@@ -563,6 +544,25 @@
                         "startOffsets": "6888",
                         "endColumns": "42",
                         "endOffsets": "6926"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\HP\\Documents\\GitHub\\bus-app-frontend\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,832",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "483,998"
+                    },
+                    "to": {
+                        "startLines": "155,159",
+                        "startColumns": "4,4",
+                        "startOffsets": "7894,8075",
+                        "endLines": "158,161",
+                        "endColumns": "12,12",
+                        "endOffsets": "8070,8239"
                     }
                 },
                 {
@@ -770,7 +770,7 @@
             "outputFile": "com.example.app-debug-26:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\HP\\Documents\\GitHub\\bus-app-frontend\\app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\HP\\Documents\\GitHub\\bus-app-frontend\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
