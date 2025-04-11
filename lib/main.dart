@@ -1,5 +1,6 @@
 import 'package:app/pages/search_page.dart';
 import 'package:app/pages/search_result_page.dart';
+import 'package:app/pages/seat_plan_page.dart';
 import 'package:app/provider/app_data_provider.dart';
 import 'package:app/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class MainApp extends StatelessWidget {
       routes: {
         routeNameHome: (context) => const SearchPageScreen(),
         routeNameSearchResultPage: (context) => const SearchResultPage(),
+        routeNameSeatPlanPage: (context) => const SeatPlanPage(),
       },
     );
   }
