@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 showLoginAlertDialog({
@@ -7,24 +6,26 @@ showLoginAlertDialog({
   required VoidCallback callback,
 }) {
   showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-            title: const Text('Login required'),
-            content: Text(message),
-            actions: [
-              OutlinedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Cancel'),
-              ),
-              OutlinedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                  callback();
-                },
-                child: const Text('Login'),
-              ),
-            ],
-          ));
+    context: context,
+    builder:
+        (context) => AlertDialog(
+          title: const Text('Login required'),
+          content: Text(message),
+          actions: [
+            OutlinedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Cancel'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                callback();
+              },
+              child: const Text('Login'),
+            ),
+          ],
+        ),
+  );
 }

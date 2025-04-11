@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 
 class ReservationItemBodyView extends StatelessWidget {
   final ReservationExpansionBody body;
-  const ReservationItemBodyView({Key? key, required this.body})
-    : super(key: key);
+  const ReservationItemBodyView({super.key, required this.body});
 
   @override
   Widget build(BuildContext context) {

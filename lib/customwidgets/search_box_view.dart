@@ -1,14 +1,11 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, use_super_parameters
 import 'package:flutter/material.dart';
 
 import '../utils/helper_functions.dart';
 
 class SearchBoxView extends StatefulWidget {
   final Function(String) onSubmit;
-  const SearchBoxView({
-    Key? key,
-    required this.onSubmit,
-  }) : super(key: key);
+  const SearchBoxView({Key? key, required this.onSubmit}) : super(key: key);
 
   @override
   State<SearchBoxView> createState() => _SearchBoxViewState();
