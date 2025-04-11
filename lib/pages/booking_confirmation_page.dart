@@ -208,44 +208,44 @@ class _BookingConfirmationPageState extends State<BookingConfirmationPage> {
 
   void _confirmBooking() {
     if (_formKey.currentState!.validate()) {
-      final customer = Customer(
-        customerName: nameController.text,
-        mobile: mobileController.text,
-        email: emailController.text,
-      );
+      try {
+        final customer = Customer(
+          customerName: nameController.text,
+          mobile: mobileController.text,
+          email: emailController.text,
+        );
 
-      final reservation = BusReservation(
-        customer: customer,
-        busSchedule: schedule,
-        timestamp: DateTime.now().millisecondsSinceEpoch,
-        departureDate: departureDate,
-        totalSeatBooked: totalSeatsBooked,
-        seatNumbers: seatNumbers,
-        reservationStatus: reservationActive,
-        totalPrice: getGrandTotal(
-          schedule.discount,
-          totalSeatsBooked,
-          schedule.ticketPrice,
-          schedule.processingFee,
-        ),
-      );
-      Provider.of<AppDataProvider>(context, listen: false)
-          .addReservation(reservation)
-          .then((response) {
-            if (response.responseStatus == ResponseStatus.SAVED) {
-              // ignore: use_build_context_synchronously
-              showMsg(context, response.message);
-              // ignore: use_build_context_synchronously
-              Navigator.popUntil(context, ModalRoute.withName(routeNameHome));
-            } else {
-              // ignore: use_build_context_synchronously
-              showMsg(context, response.message);
-            }
-          })
-          .catchError((error) {
-            // ignore: use_build_context_synchronously
-            showMsg(context, 'Could not save');
-          });
+        final reservation = BusReservation(
+          customer: customer,
+          busSchedule: schedule,
+          timestamp: DateTime.now().millisecondsSinceEpoch,
+          departureDate: departureDate,
+          totalSeatBooked: totalSeatsBooked,
+          seatNumbers: seatNumbers,
+          reservationStatus: reservationActive,
+          totalPrice: getGrandTotal(
+            schedule.discount,
+            totalSeatsBooked,
+            schedule.ticketPrice,
+            schedule.processingFee,
+          ),
+        );
+        Provider.of<AppDataProvider>(context, listen: false)
+            .addReservation(reservation)
+            .then((response) {
+              if (response.responseStatus == ResponseStatus.SAVED) {
+                showMsg(context, response.message);
+                Navigator.popUntil(context, ModalRoute.withName(routeNameHome));
+              } else {
+                showMsg(context, response.message);
+              }
+            })
+            .catchError((error) {
+              showMsg(context, 'Could not save');
+            });
+      } catch (e) {
+        print(e);
+      }
     }
   }
 }

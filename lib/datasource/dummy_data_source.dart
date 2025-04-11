@@ -7,42 +7,67 @@ import 'package:app/model/bus_reservation.dart';
 import 'package:app/model/bus_schedule.dart';
 import 'package:app/model/but_route.dart';
 import 'package:app/model/response_model.dart';
+import 'package:app/utils/constants.dart';
 import 'package:flutter/foundation.dart';
 
 class DummyDataSource extends DataSource {
   @override
-  Future<ResponseModel> addBus(Bus bus) {
-    throw UnimplementedError();
+  Future<ResponseModel> addBus(Bus bus) async {
+    TempDB.tableBus.add(bus);
+    return ResponseModel(
+      responseStatus: ResponseStatus.SAVED,
+      statusCode: 200,
+      message: 'Bus Saved',
+      object: {},
+    );
   }
 
   @override
-  Future<ResponseModel> addReservation(BusReservation reservation) {
-    throw UnimplementedError();
+  Future<ResponseModel> addReservation(BusReservation reservation) async {
+    TempDB.tableReservation.add(reservation);
+    return ResponseModel(
+      responseStatus: ResponseStatus.SAVED,
+      statusCode: 200,
+      message: 'Your reservation has been saved ',
+      object: {},
+    );
   }
 
   @override
-  Future<ResponseModel> addRoute(BusRoute busRoute) {
-    throw UnimplementedError();
+  Future<ResponseModel> addRoute(BusRoute busRoute) async {
+    TempDB.tableRoute.add(busRoute);
+    return ResponseModel(
+      responseStatus: ResponseStatus.SAVED,
+      statusCode: 200,
+      message: 'Route Saved',
+      object: {},
+    );
   }
 
   @override
-  Future<ResponseModel> addSchedule(BusSchedule busSchedule) {
-    throw UnimplementedError();
+  Future<ResponseModel> addSchedule(BusSchedule busSchedule) async {
+    TempDB.tableSchedule.add(busSchedule);
+    return ResponseModel(
+      responseStatus: ResponseStatus.SAVED,
+      statusCode: 200,
+      message: 'Schedule Saved',
+      object: {},
+    );
   }
 
   @override
-  Future<List<Bus>> getAllBus() {
-    throw UnimplementedError();
+  Future<List<Bus>> getAllBus() async {
+    return TempDB.tableBus;
   }
 
   @override
-  Future<List<BusReservation>> getAllReservation() {
-    throw UnimplementedError();
+  Future<List<BusReservation>> getAllReservation() async {
+    return TempDB.tableReservation;
   }
 
   @override
-  Future<List<BusRoute>> getAllRoutes() {
-    throw UnimplementedError();
+  Future<List<BusRoute>> getAllRoutes() async {
+    return TempDB.tableRoute;
   }
 
   @override
@@ -51,8 +76,10 @@ class DummyDataSource extends DataSource {
   }
 
   @override
-  Future<List<BusReservation>> getReservationsByMobile(String mobile) {
-    throw UnimplementedError();
+  Future<List<BusReservation>> getReservationsByMobile(String mobile) async {
+    return TempDB.tableReservation
+        .where((element) => element.customer.mobile == mobile)
+        .toList();
   }
 
   @override
