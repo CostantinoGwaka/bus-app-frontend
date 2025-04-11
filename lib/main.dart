@@ -1,3 +1,4 @@
+import 'package:app/pages/booking_confirmation_page.dart';
 import 'package:app/pages/search_page.dart';
 import 'package:app/pages/search_result_page.dart';
 import 'package:app/pages/seat_plan_page.dart';
@@ -32,6 +33,8 @@ class MainApp extends StatelessWidget {
         routeNameHome: (context) => const SearchPageScreen(),
         routeNameSearchResultPage: (context) => const SearchResultPage(),
         routeNameSeatPlanPage: (context) => const SeatPlanPage(),
+        routeNameBookingConfirmationPage:
+            (context) => const BookingConfirmationPage(),
       },
     );
   }

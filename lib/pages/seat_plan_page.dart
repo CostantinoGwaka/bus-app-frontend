@@ -1,9 +1,11 @@
 import 'package:app/customwidgets/seat_plan_view.dart';
 import 'package:app/model/bus_schedule.dart';
+import 'package:app/provider/app_data_provider.dart';
 import 'package:app/utils/colors.dart';
 import 'package:app/utils/constants.dart';
 import 'package:app/utils/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SeatPlanPage extends StatefulWidget {
   const SeatPlanPage({super.key});
@@ -32,20 +34,19 @@ class _SeatPlanPageState extends State<SeatPlanPage> {
   }
 
   _getData() async {
-    final resList = [];
-    // final resList = await Provider.of<AppDataProvider>(
-    //   context,
-    //   listen: false,
-    // ).getReservationsByScheduleAndDepartureDate(
-    //   schedule.scheduleId!,
-    //   departureDate,
-    // );
+    final resList = await Provider.of<AppDataProvider>(
+      context,
+      listen: false,
+    ).getReservationsByScheduleAndDepartureDate(
+      schedule.scheduleId!,
+      departureDate,
+    );
     setState(() {
       isDataLoading = false;
     });
     List<String> seats = [];
     for (final res in resList) {
-      // totalSeatBooked += res.totalSeatBooked;
+      totalSeatBooked += res.totalSeatBooked;
       seats.add((res.seatNumbers));
     }
     bookedSeatNumbers = seats.join(',');
