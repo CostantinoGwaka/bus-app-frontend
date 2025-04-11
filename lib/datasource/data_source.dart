@@ -20,5 +20,8 @@ abstract class DataSource {
   Future<ResponseModel> addReservation(BusReservation reservation);
   Future<List<BusReservation>> getAllReservation();
   Future<List<BusReservation>> getReservationsByMobile(String mobile);
-  Future<List<BusReservation>> getReservationsByScheduleAndDepartureDate(int scheduleId, String departureDate);
+  Future<List<BusReservation>> getReservationsByScheduleAndDepartureDate(
+    int scheduleId,
+    String departureDate,
+  );
 }
