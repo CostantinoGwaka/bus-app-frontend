@@ -156,15 +156,12 @@ class _SearchPageScreenState extends State<SearchPageScreen> {
         Provider.of<AppDataProvider>(
           context,
           listen: false,
-        ).getRouteByCityFromAndCityTo(fromCity!, toCity!).then((value) {
+        ).getRouteByCityFromAndCityTo(fromCity!, toCity!).then((route) {
           Navigator.pushNamed(
             // ignore: use_build_context_synchronously
             context,
             routeNameSearchResultPage,
-            arguments: {
-              'route': value,
-              'departureDate': getFormattedDate(departure!),
-            },
+            arguments: [route, getFormattedDate(departure!)],
           );
         });
       }
