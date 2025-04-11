@@ -1,4 +1,5 @@
 import 'package:app/model/bus_model.dart';
+import 'package:app/model/bus_schedule.dart';
 import 'package:app/model/but_route.dart';
 import 'package:app/provider/app_data_provider.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ import '../utils/constants.dart';
 import '../utils/helper_functions.dart';
 
 class AddSchedulePage extends StatefulWidget {
-  const AddSchedulePage({Key? key}) : super(key: key);
+  const AddSchedulePage({super.key});
 
   @override
   State<AddSchedulePage> createState() => _AddSchedulePageState();
@@ -185,11 +186,13 @@ class _AddSchedulePageState extends State<AddSchedulePage> {
         listen: false,
       ).addSchedule(busSchedule).then((response) {
         if (response.responseStatus == ResponseStatus.SAVED) {
+          // ignore: use_build_context_synchronously
           showMsg(context, response.message);
           resetFields();
         } else if (response.responseStatus == ResponseStatus.EXPIRED ||
             response.responseStatus == ResponseStatus.UNAUTHORIZED) {
           showLoginAlertDialog(
+            // ignore: use_build_context_synchronously
             context: context,
             message: response.message,
             callback: () {

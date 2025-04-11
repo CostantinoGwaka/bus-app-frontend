@@ -2,6 +2,7 @@ import 'package:app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
+  // ignore: use_super_parameters
   const MainDrawer({Key? key}) : super(key: key);
 
   @override
