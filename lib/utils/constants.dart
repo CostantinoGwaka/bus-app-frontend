@@ -34,6 +34,7 @@ const cities = [
   'Rangamati',
 ];
 
+// ignore: constant_identifier_names
 enum ResponseStatus { SAVED, FAILED, UNAUTHORIZED, AUTHORIZED, EXPIRED, NONE }
 
 const busTypes = [busTypeACBusiness, busTypeACEconomy, busTypeNonAc];

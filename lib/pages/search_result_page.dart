@@ -31,7 +31,6 @@ class SearchResultPage extends StatelessWidget {
                 (context, provider, _) => FutureBuilder<List<BusSchedule>>(
                   future: provider.getSchedulesByRouteName(route.routeName),
                   builder: (context, snapshot) {
-                    print("snapshot $snapshot");
                     if (snapshot.hasData) {
                       final scheduleList = snapshot.data!;
                       return Column(
