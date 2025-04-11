@@ -1,3 +1,4 @@
+import 'package:app/drawers/main_drawer.dart';
 import 'package:app/provider/app_data_provider.dart';
 import 'package:app/utils/constants.dart';
 import 'package:app/utils/helper_functions.dart';
@@ -20,6 +21,7 @@ class _SearchPageScreenState extends State<SearchPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MainDrawer(),
       appBar: AppBar(title: const Text('Search'), centerTitle: true),
       body: Form(
         key: _formKey,
