@@ -1,7 +1,7 @@
 import '../utils/constants.dart';
 
 class ResponseModel {
-  ResponseStatus responseStatus;
+  ResponseStatus? responseStatus;
   int statusCode;
   String message;
   Map<String, dynamic> object;

@@ -1,6 +1,9 @@
 import 'package:app/pages/add_bus_page.dart';
 import 'package:app/pages/add_route_page.dart';
+import 'package:app/pages/add_schedule_page.dart';
 import 'package:app/pages/booking_confirmation_page.dart';
+import 'package:app/pages/login_page.dart';
+import 'package:app/pages/reservation_page.dart';
 import 'package:app/pages/search_page.dart';
 import 'package:app/pages/search_result_page.dart';
 import 'package:app/pages/seat_plan_page.dart';
@@ -39,6 +42,9 @@ class MainApp extends StatelessWidget {
             (context) => const BookingConfirmationPage(),
         routeNameAddBusPage: (context) => const AddBusPage(),
         routeNameAddRoutePage: (context) => const AddRoutePage(),
+        routeNameAddSchedulePage: (context) => const AddSchedulePage(),
+        routeNameReservationPage: (context) => const ReservationPage(),
+        routeNameLoginPage: (context) => const LoginPage(),
       },
     );
   }

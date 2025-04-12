@@ -52,7 +52,7 @@ class _ReservationPageState extends State<ReservationPage> {
             ExpansionPanelList(
               expansionCallback: (index, isExpanded) {
                 setState(() {
-                  items[index].isExpanded = !isExpanded;
+                  items[index].isExpanded = isExpanded;
                 });
               },
               children:
