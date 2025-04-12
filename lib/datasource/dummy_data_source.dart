@@ -71,8 +71,8 @@ class DummyDataSource extends DataSource {
   }
 
   @override
-  Future<List<BusSchedule>> getAllSchedules() {
-    throw UnimplementedError();
+  Future<List<BusSchedule>> getAllSchedules() async {
+    return TempDB.tableSchedule;
   }
 
   @override

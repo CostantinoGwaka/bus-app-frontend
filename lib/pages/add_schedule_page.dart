@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:app/model/bus_model.dart';
 import 'package:app/model/bus_schedule.dart';
 import 'package:app/model/but_route.dart';
@@ -173,6 +175,9 @@ class _AddSchedulePageState extends State<AddSchedulePage> {
       return;
     }
     if (_formKey.currentState!.validate()) {
+      final random = Random();
+      final scheduleId =
+          105 + random.nextInt(2182 - 105 + 1); // Range: 105–2182
       final busSchedule = BusSchedule(
         bus: bus!,
         busRoute: busRoute!,
@@ -180,6 +185,7 @@ class _AddSchedulePageState extends State<AddSchedulePage> {
         ticketPrice: int.parse(priceController.text),
         discount: int.parse(discountController.text),
         processingFee: int.parse(feeController.text),
+        scheduleId: scheduleId,
       );
       Provider.of<AppDataProvider>(
         context,

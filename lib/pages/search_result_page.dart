@@ -87,7 +87,7 @@ class ScheduleItemView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListTile(
-              title: Text(schedule.bus.busName),
+              title: Text('${schedule.bus.busName} (${schedule.scheduleId})'),
               subtitle: Text(schedule.bus.busType),
               trailing: Text('$currency ${schedule.ticketPrice}'),
             ),
